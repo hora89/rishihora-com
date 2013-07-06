@@ -5,15 +5,14 @@ var fs = require ('fs');
 //fs.readFileSync('index.html');
 //console.log(fs);
 
-buf = new Buffer(256);
 buf=fs.readFileSync('index.html');
 //var len = buf.write
-var string = buf.toString('utf8', 0);
+var string = buf.toString();
 //console.log(string);
 
 
 app.get('/', function(request, response) {
-  response.send('Hello World Bitches!'+ string);
+  response.send( string);
 });
 
 var port = process.env.PORT || 5000;
